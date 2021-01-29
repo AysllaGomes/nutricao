@@ -1,0 +1,67 @@
+version: '3'
+services:
+    db:
+        image: postgres:12.0-alpine
+        container_name: nutricao-db
+        environment:
+            POSTGRES_USER: nutri
+            POSTGRES_PASSWORD: Nutricao@123
+            POSTGRES_DB: nutricao
+        restart: unless-stopped
+        tty: true
+        ports:
+            - "5448:5432"
+        networks:
+            - nutricao-network
+
+    api:
+        build:
+            context: ./docker/backend
+            dockerfile: Dockerfile
+        container_name: nutricao-api
+        restart: unless-stopped
+        tty: true
+        environment:
+            SERVICE_NAME: app
+            SERVICE_TAGS: dev
+            ENV_FILE: development
+            DB_HOST: db
+            DB_PORT: 5432
+            DB_DATABASE: localhost
+            DB_USERNAME: nutricaome
+            DB_PASSWORD: Nutricao@123
+        working_dir: /var/www/html
+        ports:
+            - "9000:80"
+        volumes:
+            - ./codigo-fonte/servico:/var/www/html
+            - ./log/cron:/var/log/cron
+        networks:
+            nutricao-network:
+                ipv4_address: 172.21.0.102
+        depends_on:
+            - db
+
+    frontend:
+        container_name: nutricao-frontend
+        environment:
+            AMBIENTE: local
+        build:
+            context: ./docker/frontend
+            dockerfile: Dockerfile
+        volumes:
+            - ./codigo-fonte/cliente/src/environments/environment.ts:/var/www/html/src/environments/environment.prod.ts
+            - ./codigo-fonte/cliente:/var/www/html
+        networks:
+            nutricao-network:
+                ipv4_address: 172.21.0.103
+        restart: always
+        depends_on:
+            - api
+networks:
+    nutricao-network:
+        driver: bridge
+        ipam:
+            driver: default
+            config:
+                - subnet: 172.21.0.0/24

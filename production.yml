@@ -1,0 +1,53 @@
+version: '3'
+services:
+    db:
+        image: postgres:12.0-alpine
+        container_name: nutricao-db
+        environment:
+            POSTGRES_USER: nutri
+            POSTGRES_PASSWORD: Nutricao@123
+            POSTGRES_DB: nutricao
+        restart: unless-stopped
+        tty: true
+        ports:
+            - "5432:5432"
+        networks:
+            - nutricao-network
+
+    api:
+        build:
+            context: ./docker/backend
+            dockerfile: Dockerfile
+        container_name: nutricao-api
+        restart: unless-stopped
+        tty: true
+        environment:
+            SERVICE_NAME: app
+            SERVICE_TAGS: dev
+        working_dir: /var/www/html
+        ports:
+            - "9000:80"
+        volumes:
+            - ./codigo-fonte/servico:/var/www/html
+            - ./log/cron:/var/log/cron
+        networks:
+            - nutricao-network
+        depends_on:
+            - db
+
+    frontend:
+        container_name: nutricao-frontend
+        build:
+            context: ./docker/frontend
+            dockerfile: Dockerfile
+        volumes:
+            - ./codigo-fonte/cliente:/var/www/html
+            - ./codigo-fonte/cliente/src/environments/environment.production.ts:/var/www/html/src/environments/environment.prod.ts
+        networks:
+            - nutricao-network
+        restart: always
+        depends_on:
+            - api
+networks:
+    nutricao-network:
+        driver: bridge
