@@ -42,7 +42,7 @@ services:
             dockerfile: Dockerfile
         volumes:
             - ./codigo-fonte/cliente:/var/www/html
-            - ./codigo-fonte/cliente/src/environments/environment.production.ts:/var/www/html/src/environments/environment.prod.ts
+            - ./codigo-fonte/cliente/src/environments/environment.production.ts:/var/www/html/src/environments/environment.production.ts
         networks:
             - nutricao-network
         restart: always

@@ -50,7 +50,7 @@ services:
             context: ./docker/frontend
             dockerfile: Dockerfile
         volumes:
-            - ./codigo-fonte/cliente/src/environments/environment.ts:/var/www/html/src/environments/environment.prod.ts
+            - ./codigo-fonte/cliente/src/environments/environment.ts:/var/www/html/src/environments/environment.production.ts
             - ./codigo-fonte/cliente:/var/www/html
         networks:
             nutricao-network:
