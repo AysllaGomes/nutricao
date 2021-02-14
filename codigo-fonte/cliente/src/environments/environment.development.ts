@@ -5,7 +5,8 @@
 export const environment = {
     production: true,
     debugRequest: false,
-    versao: 'Desenvolvimento'
+    versao: 'Desenvolvimento',
+    lang: 'pt'
 };
 
 /*

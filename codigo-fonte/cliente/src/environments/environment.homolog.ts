@@ -6,6 +6,7 @@ export const environment = {
     production: true,
     debugRequest: false,
     versao: 'Homologação',
+    lang: 'pt'
 };
 
 /*
