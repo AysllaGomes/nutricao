@@ -3,4 +3,7 @@ export const environment = {
     debugRequest: false,
     lang: 'pt',
     versao: ~,
+    api: {
+        url: ~
+    }
 };

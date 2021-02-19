@@ -6,7 +6,10 @@ export const environment = {
     production: true,
     debugRequest: false,
     versao: 'Homologação',
-    lang: 'pt'
+    lang: 'pt',
+    api: {
+        url: 'http://api.nutricao.hom.com.br'
+    },
 };
 
 /*

@@ -6,7 +6,10 @@ export const environment = {
     production: false,
     debugRequest: false,
     versao: 'Local',
-    lang: 'pt'
+    lang: 'pt',
+    api: {
+        url: 'http://api.nutricao.local.com.br'
+    },
 };
 
 /*
