@@ -1,9 +1,12 @@
-import {ReactiveFormsModule} from "@angular/forms";
-import {CommonModule} from "@angular/common";
-import {ModuleWithProviders, NgModule} from "@angular/core";
-import {TranslateLoader, TranslateModule} from "@ngx-translate/core";
-import {HttpClient} from "@angular/common/http";
-import {TranslateHttpLoader} from "@ngx-translate/http-loader";
+import { CommonModule } from '@angular/common';
+import { HttpClient } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
+import { ModuleWithProviders, NgModule } from '@angular/core';
+
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { TranslateLoader , TranslateModule} from '@ngx-translate/core';
+
+import { MaskPipe } from './pipe/mask.pipe';
 
 @NgModule({
     imports: [
@@ -19,9 +22,13 @@ import {TranslateHttpLoader} from "@ngx-translate/http-loader";
             }
         }),
     ],
-    providers: [],
-    declarations: [],
-    exports: [   ]
+    declarations: [
+        MaskPipe
+    ],
+    exports: [
+        MaskPipe
+    ],
+    providers: []
 })
 export class SharedModule {
     static forRoot(): ModuleWithProviders<any> {
