@@ -1,0 +1,412 @@
+{
+    "shared": {
+        "component": {
+            "grid": {
+                "action": "Ações",
+                "empty": "Nenhum registro encontrado",
+                "pagination": "Total de cadastro(s)"
+            },
+            "tab": {
+                "confidential": {
+                    "general": "Público",
+                    "particular": "Confidencial",
+                    "copyToGeneral": "Copiar informação pública"
+                },
+                "document": {
+                    "document": "Documentos",
+                    "history": "Histórico"
+                }
+            },
+            "pCalendar": {
+                "firstDayOfWeek": 0,
+                "dayNames": [
+                    "Domingo",
+                    "Segunda",
+                    "Terça",
+                    "Quarta",
+                    "Quinta",
+                    "Sexta",
+                    "Sábado"
+                ],
+                "dayNamesShort": [
+                    "Dom",
+                    "Seg",
+                    "Ter",
+                    "Qua",
+                    "Qui",
+                    "Sex",
+                    "Sáb"
+                ],
+                "dayNamesMin": [
+                    "Do",
+                    "Se",
+                    "Te",
+                    "Qu",
+                    "Qu",
+                    "Se",
+                    "Sa"
+                ],
+                "monthNames": [
+                    "Janeiro",
+                    "Fevereiro",
+                    "Março",
+                    "Abril",
+                    "Maio",
+                    "Junho",
+                    "Julho",
+                    "Agosto",
+                    "Setembro",
+                    "Outubro",
+                    "Novembro",
+                    "Dezembro"
+                ],
+                "monthNamesShort": [
+                    "Jan",
+                    "Fev",
+                    "Mar",
+                    "Abr",
+                    "Mai",
+                    "Jun",
+                    "Jul",
+                    "Ago",
+                    "Set",
+                    "Out",
+                    "Nov",
+                    "Dez"
+                ],
+                "today": "Hoje",
+                "clear": "Limpar"
+            }
+        },
+        "yes": "Sim",
+        "no": "Não"
+    },
+    "actions": {
+        "cancel": "Cancelar",
+        "clear": "Limpar",
+        "concludeRegistration": "Concluir cadastro",
+        "save": "Salvar"
+    },
+    "grid": {
+        "empty": "Nenhum registro encontrado",
+        "count": "Total de cadastro(s): {{count}}",
+        "actions": {
+            "toggleActivate": "Ativar/Inativar",
+            "update": "Editar",
+            "delete": "Excluir"
+        },
+        "error": {
+            "load": "Erro ao carregar"
+        }
+    },
+    "auth": {
+        "login": {
+            "title": "Autenticação",
+            "actions": {
+                "access": "Entrar",
+                "register": "Criar conta",
+                "recover_password": "Recuperar senha"
+            },
+            "fields": {
+                "username": {
+                    "label": "Login",
+                    "title": ""
+                },
+                "password": {
+                    "label": "Senha",
+                    "title": ""
+                }
+            },
+            "error": {
+                "updateInternalCredential": "Não foi possível atualizar seus dados, pois o seu e-mail {{email}} já está sendo utilizado por outro usuário."
+            }
+        },
+        "passwordRecovery": {
+            "title": "Recuperar senha",
+            "saveSuccess": "Sucesso!",
+            "saveSuccessComplement": "A senha foi enviada para {{email}}",
+            "actions": {
+                "back": "Voltar",
+                "recoverPassword": "Recuperar senha"
+            },
+            "fields": {
+                "email": {
+                    "label": "Login",
+                    "title": "Campo de livre preenchimento para informar email de usuários Pleiteante ou GTAT-TEC"
+                }
+            }
+        }
+    },
+    "credential": {
+        "new": {
+            "title": "Novo usuário",
+            "externalTitle": "Cadastre-se",
+            "saveSuccess": "Usuário cadastrado com sucesso!",
+            "saveSuccessComplement": "E-mail de confirmação de cadastro enviado para {{email}}",
+            "fields": {
+                "profile": {
+                    "label": "Perfil *",
+                    "title": "Perfil de acesso de usuário"
+                },
+                "name": {
+                    "label": "Nome completo",
+                    "title": "Nome do usuário que está se cadastrando"
+                },
+                "organizationUnit": {
+                    "label": "Órgão *",
+                    "title": "Órgão do usuário que está sendo cadastrado"
+                },
+                "office": {
+                    "label": "Cargo",
+                    "title": "Cargo do usuário que está sendo cadastrado"
+                },
+                "email": {
+                    "label": "E-mail",
+                    "title": "E-mail do usuário que está se cadastrando"
+                },
+                "emailConfirmation": {
+                    "label": "Confirmar e-mail",
+                    "title": "Confirmação do e-mail do usuário que está se cadastrando"
+                },
+                "password": {
+                    "label": "Senha",
+                    "title": "Senha do usuário que está se cadastrando"
+                },
+                "passwordConfirmation": {
+                    "label": "Confirmar senha",
+                    "title": "Confirmação da senha do usuário que está se cadastrando"
+                },
+                "registrationNumber": {
+                    "label": "CPF",
+                    "title": "CPF do usuário que está se cadastrando"
+                },
+                "phone": {
+                    "label": "Telefone",
+                    "title": "Contato telefônico do usuário que está se cadastrando"
+                },
+                "status": {
+                    "label": "Status",
+                    "title": "Status do usuário que está se cadastrando"
+                }
+            }
+        },
+        "edit": {
+            "title": "Editar usuário",
+            "saveSuccess": "Usuário editado com sucesso"
+        },
+        "editEmail": {
+            "saveSuccessEmail": "Usuário editado com sucesso. O email de acesso foi alterado e será necessário efetuar login novamente. Você será deslogado."
+        },
+        "selfData": {
+            "title": "Meus dados",
+            "fields": {
+                "name": "Nome completo",
+                "email": "E-mail",
+                "username": "Usuário",
+                "status": "Status",
+                "profile": "Perfil"
+            }
+        },
+        "changePassword": {
+            "title": "Redefinir Senha",
+            "fields": {
+                "pastPassword": {
+                    "label": "Senha atual",
+                    "title": "Senha atual do usuário"
+                },
+                "password": {
+                    "label": "Nova senha",
+                    "title": "Nova senha do usuário."
+                },
+                "passwordConfirmation": {
+                    "label": "Confirmar nova senha",
+                    "title": "Confirmação da senha do usuário que está realizando alterações"
+                }
+            },
+            "actions": {
+                "save": "Salvar",
+                "cancel": "Cancelar"
+            }
+        },
+        "view": {
+            "title": "Detalhes do usuário",
+            "fields": {
+                "name": "Nome completo",
+                "email": "E-mail",
+                "organizationUnit": "Órgão",
+                "office": "Cargo",
+                "registrationNumber": "CPF",
+                "username": "Usuário",
+                "phoneNumber": "Telefone",
+                "status": "Status",
+                "profile": "Perfil",
+                "credentialType": "Tipo de usuário",
+                "creationType": "Tipo de cadastro"
+            },
+            "action": {
+                "update": "Editar",
+                "back": "Voltar"
+            }
+        },
+        "list": {
+            "title": "Usuários",
+            "create": "Cadastrar"
+        },
+        "search": {
+            "action": {
+                "search": "Pesquisar",
+                "clear": "Limpar"
+            },
+            "fields": {
+                "name": "Nome",
+                "profile": "Perfil",
+                "email": "E-mail",
+                "status": "Status",
+                "organizationUnit": "Órgão",
+                "office": "Cargo"
+            }
+        },
+        "grid": {
+            "column": {
+                "name": "Nome",
+                "email": "E-mail",
+                "profile": "Perfil",
+                "status": "Status",
+                "organizationUnit": "Órgão",
+                "office": "Cargo"
+            },
+            "loadingInternalUser": "Atualizando usuários internos",
+            "loadingEditUser": "Carregando dados do usuário",
+            "action": {
+                "message": {
+                    "activate": "Usuário ativado com sucesso",
+                    "deactivate": "Usuário inativado com sucesso",
+                    "delete": "Deseja confirmar a exclusão do usuário {{name}}?"
+                }
+            },
+            "error": {
+                "uncreatedInternalCredentialList": "Os usuários abaixo não puderam ser atualizados/cadastrados pois já existem usuários externos utilizando os e-mails destes usuários: <br><b>{{userList}}</b>"
+            }
+        },
+        "selfCreation": "Auto cadastro",
+        "createdBy": "Cadastrado por {{name}}",
+        "error": {
+            "internalUserLoad": "Erro ao atualizar os usuários internos"
+        }
+    },
+    "validations": {
+        "required": "Campo obrigatório não preenchido",
+        "requiredFile": "Nenhum arquivo foi selecionado",
+        "minlength": "Informe no mínimo {{p0}}",
+        "maxlength": "Informe no máximo {{p0}}",
+        "pattern": "Forneça um valor válido",
+        "rangeLength": "Forneça um valor entre {{p0}} e {{p1}} caracteres de comprimento",
+        "length": "É necessário digitar {{p0}} caracteres",
+        "min": "Forneça um valor maior ou igual a {{p0}}",
+        "gt": "Forneça um valor maior a {{p0}}",
+        "gte": "Forneça um valor maior ou igual a {{p0}}",
+        "max": "O número é muito grande",
+        "lt": "Forneça um valor menor a {{p0}}",
+        "lte": "Forneça um valor menor ou igual a {{p0}}",
+        "range": "Forneça um valor entre {{p0}} e {{p1}}",
+        "digits": "Forneça somente dígitos",
+        "number": "Forneça um número válido",
+        "url": "Forneça uma URL válida",
+        "email": "Favor informar um e-mail válido",
+        "date": "Forneça uma data válida",
+        "minDate": "Forneça uma data menor ou igual a {{p0}}",
+        "maxDate": "Forneça uma data maior ou igual a {{p0}}",
+        "dateISO": "Forneça uma data válida (ISO)",
+        "monthYear": "Forneça um mês/ano válido",
+        "creditCard": "Forneça um cartão de crédito válido",
+        "json": "Forneça um JSON válido",
+        "base64": "Forneça um base64 válido",
+        "phone": "Forneça um telefone válido",
+        "uuid": "Forneça um identificador único universal válido",
+        "equal": "Forneça um valor igual a {{p0}}",
+        "notEqual": "Forneça o mesmo valor novamente",
+        "equalTo": "Forneça o mesmo valor novamente",
+        "notEqualTo": "Não forneça o valor {{p0}}",
+        "cpf": "Favor informar um CPF válido",
+        "cnpj": "Favor informar um CNPJ válido",
+        "arrayMinChecked": "Escolha pelo menos {{p0}} itens",
+        "passwordRules": "A senha deve ser composta de 8 dígitos com no mínimo um número, um carácter especial e uma letra maiúscula.",
+        "required_unless": "Preencha pelo menos um desses campos",
+        "unique": "Informe valores diferentes",
+        "maxBinarySize": "Tamanho máximo de {{max}} {{metric}}",
+        "fileFormat": "Apenas os seguintes formatos são válidos: {{p0}}",
+        "confirm": "Os campos não coincidem",
+        "equalYear": "Informe anos diferentes",
+        "requiredYear": "O ano é obrigatório"
+    },
+    "status": {
+        "1": "Ativo",
+        "2": "Inativo"
+    },
+    "message": {
+        "error": "Erro",
+        "warning": "Atenção",
+        "success": "Sucesso"
+    },
+    "credentialType": {
+        "1": "Usuário Interno",
+        "2": "Usuário Externo"
+    },
+    "audit": {
+        "fieldName": {
+            "TB_TELEFONE#NU_NUMERO": "Telefone",
+            "TX_ENDERECO": "Endereço",
+            "DT_FIM": "Fim",
+            "ID_SITUACAO_PROJETADA": "Situação projetada",
+            "ID_VISIBILIDADE": "Visibilidade",
+            "TX_CARGO": "Cargo",
+            "TX_APELIDO": "Apelido",
+            "ID_CRIADOR": "Criador",
+            "ID_ACORDO": "Acordo",
+            "ID_GRUPO": "Grupo",
+            "DT_ALTERACAO": "Alterado em",
+            "ID_RECURSO": "Recurso",
+            "TX_LOGIN": "Usuário",
+            "ID_TIPO": "Tipo",
+            "ID_MANIFESTACAO": "Manifestação",
+            "ID_PESSOA": "Pessoa",
+            "CD_CODIGO": "Código",
+            "ID_PESSOA_FISICA": "Pessoa Física",
+            "CD_CPF": "Cpf",
+            "ID_ACORDO_PAIS": "Acordo/País",
+            "TX_EMAIL": "Email",
+            "DT_EXIBICAO": "Exibição",
+            "NU_NUMERO": "Número",
+            "ID_CONTATO": "Contato",
+            "ID_SITUACAO": "Situação",
+            "NU_ANO": "Ano",
+            "TX_ASSUNTO": "Assunto",
+            "ID_PERFIL": "Perfil",
+            "DT_INICIO": "Início",
+            "TX_NOME_LOGICO": "Nome lógico",
+            "ID_SITUACAO_APELIDO": "Apelido da situação",
+            "TX_SENHA": "Senha",
+            "TX_NOME": "Nome",
+            "LO_PUBLICADO": "Publicado",
+            "ID_SITUACAO_PROXIMA": "Proxima situação",
+            "ID_PROCESSO": "Processo",
+            "ID_PRODUTO": "Produto",
+            "ID_RESPONSAVEL": "Responsável",
+            "ID_ABRANGENCIA": "Abrangência",
+            "LO_ALTERACAO_CT1": "Tem alteração CT1",
+            "ID_PAIS": "País",
+            "ID_CADASTRANTE": "Cadastrante",
+            "ID_DOCUMENTO": "Documento",
+            "ID_CREDENCIAL": "Usuário",
+            "ID_CUSTO": "Custo",
+            "ID_DECLARANTE": "Declarante",
+            "ID_COMPARTILHAMENTO": "Circulação",
+            "DT_ALTERACAO_PUBLICA": "Alterado publicamente em",
+            "DT_CRIACAO": "Criado em",
+            "ID_UNIDADE_ORGANIZACIONAL": "Unidade organizacional",
+            "TX_DESCRICAO": "Descrição",
+            "DT_REFERENCIA": "Data de referência",
+            "ID_PESSOA_JURIDICA": "Empresa/Entidade"
+        }
+    }
+}

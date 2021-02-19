@@ -9,13 +9,13 @@ import { TranslateModule } from '@ngx-translate/core';
 
 import { AppComponent } from './app.component';
 
+import { SharedModule } from './shared/shared.module';
 import { AppRoutingModule } from './app-routing.module';
 
 import { TimingInterceptor } from './shared/interceptor/timing.interceptor';
 import { ProgressInterceptor } from './shared/interceptor/progress.interceptor';
 import { TokenInjectorInterceptor } from './shared/interceptor/token-injector.interceptor';
 import { TreatNullValuesInterceptor } from './shared/interceptor/treat-null-values.interceptor';
-import {SharedModule} from "./shared/shared.module";
 
 export function tokenGetter () {
     return localStorage.getItem('app.token');

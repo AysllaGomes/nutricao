@@ -1,0 +1,382 @@
+@import '../assets/sass/_variables';
+
+$linkColor: #0000FF;
+$primaryColor: #2A67BC;
+$primaryDarkColor: #0041B2;
+$primaryLightColor: lighten($primaryColor, 10%);
+$accentColor: #2F96B4;
+$accentDarkColor: darken($accentColor, 10%);
+$accentLightColor: lighten($accentColor, 10%);
+$accentTextColor: #ffffff;
+$inputErrorTextColor: #ab1a0f;
+$inputBorderErrorColor: #ab1a0f;
+$invalidInputLabelColor: #ab1a0f;
+$invalidInputBorderColor: #ab1a0f;
+
+$infoTextColor: #ffffff;
+$infoColor: #2196F3;
+$infoDarkColor: darken($infoColor, 10%);
+
+$warningColor: #ffc107;
+$warningDarkColor: darken($warningColor, 10%);
+$warningLightColor: lighten($warningColor, 10%);
+$warningTextColor: #856404;
+
+// @todo descobrir uma forma de importar o SCSS da lib em vez de importar do assert/lib/ultimang
+// @todo deletar o assert/lib o correto seria importar o scss da lib em vez do local (ajuste técnico)
+// @todo deletar a pasta /images
+
+@import '../assets/sass/_mixins';
+@import '../assets/sass/theme/_icons';
+@import '../assets/sass/theme/_common';
+@import '../assets/sass/theme/_forms';
+@import '../assets/sass/theme/_panel';
+@import '../assets/sass/theme/_data';
+@import '../assets/sass/theme/_menu';
+@import '../assets/sass/theme/_message';
+@import '../assets/sass/theme/_overlay';
+@import '../assets/sass/theme/_misc';
+
+// PERSONALIZAÇÃO DOS TEMAS
+@import 'theme/_data';
+
+// ESTILIZAÇÃO PRÓPRIA
+
+body {
+
+    .system-name {
+
+        h1 {
+            font-family: 'Open Sans', sans-serif;
+            letter-spacing: -1px;
+            font-size: 45px !important;
+            color: white !important;
+            margin-left: 20px;
+            margin-top: 6px;
+        }
+
+    }
+
+    -ms-word-wrap: break-word;
+    word-wrap: break-word;
+
+    .ui-float-label > textarea:focus ~ label,
+    .ui-float-label > textarea.ui-state-filled ~ label {
+        top: -.75em;
+        font-size: 12px;
+    }
+
+    p-card {
+        .ui-card {
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 2px 1px -1px rgba(0, 0, 0, 0.12);
+            -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 2px 1px -1px rgba(0, 0, 0, 0.12);
+            -moz-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 2px 1px -1px rgba(0, 0, 0, 0.12);
+            border-radius: 2px;
+            background: #ffffff;
+            margin-bottom: 1em;
+            box-sizing: border-box;
+            border: 0 none;
+
+            h1 {
+                font-size: 1.5em;
+                font-weight: 400;
+                margin: 1em 0;
+
+                &:first-child {
+                    margin-top: .667em;
+                }
+            }
+        }
+
+        &.ui-card-field {
+            .ui-g.form-group > div {
+                padding: 1.2em .5em;
+            }
+
+            .ui-card-title {
+                margin-bottom: .5em;
+                font-size: 1.250em;
+                font-weight: 400;
+            }
+        }
+
+        &.ui-card-unformatted {
+            .ui-card {
+                & {
+                    box-shadow: none;
+                    -webkit-box-shadow: none;
+                    border-radius: unset;
+                }
+
+                .ui-card-body {
+                    padding: 20px 0 0;
+                }
+            }
+        }
+    }
+
+    .ui-blockui {
+        div {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            text-align: center;
+            -webkit-transform: translate(-50%, -50%);
+            -moz-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            -o-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            color: #fff;
+        }
+    }
+
+    .ui-paginator-bottom {
+
+        p-dropdown {
+
+            .ui-dropdown-trigger {
+
+                span {
+                    color: #fff !important;
+                }
+
+            }
+
+        }
+
+    }
+
+    .ui-dialog {
+        .ui-dialog-footer {
+            .ui-button {
+                &.primary {
+                    background-color: $primaryColor;
+                    color: $accentTextColor;
+                }
+
+                &.secondary {
+                    background-color: $accentColor;
+                    color: $accentTextColor;
+                }
+            }
+        }
+    }
+
+    .ui-table {
+
+        .ui-table-thead {
+
+            tr {
+
+                th {
+                    background-color: $primaryColor;
+                    color: $accentTextColor;
+                    border-color: $primaryDarkColor;
+                    font-weight: bold;
+                    text-align: left;
+
+                    .ui-sortable-column-icon {
+                        color: $accentTextColor;
+                    }
+
+                    &:not(.ui-state-highlight):hover {
+                        .ui-sortable-column-icon {
+                            color: $textColor;
+                        }
+                    }
+
+                }
+
+            }
+
+        }
+
+        .ui-table-summary {
+            text-align: left;
+            font-weight: bold;
+        }
+
+    }
+
+    .ui-calendar .ui-datepicker {
+        min-width: 245px;
+    }
+
+    .ui-datepicker-buttonpane {
+
+        button.ui-button-icon-only {
+            padding: 10px;
+        }
+
+    }
+
+    .ui-button {
+
+        &.ui-button-fluid {
+            width: 100%;
+            margin-right: 0;
+        }
+
+        &.ui-button-icon-only {
+            padding: 10px;
+        }
+
+    }
+
+    .ui-fluid {
+
+        @media (min-width: 642px) {
+            .ui-button:not(.ui-button-fluid) {
+                width: auto;
+                margin-right: .5em;
+            }
+
+            .ui-table {
+                .ui-button:not(.ui-button-fluid) {
+                    width: 2.5em;
+                    margin-right: .5em;
+                }
+            }
+
+        }
+
+    }
+
+    .ui-dropdown {
+
+        .ui-dropdown-trigger {
+
+            .fa {
+                margin-top: -5px;
+                margin-left: -5px;
+            }
+
+        }
+    }
+
+    .ui-message {
+
+        &.ui-messages-error, &.ui-message-error {
+            background-color: transparent;
+            border: 0 none;
+            margin: 0;
+            font-size: .80em;
+
+            .ui-message-text {
+                color: $inputErrorTextColor
+            }
+        }
+
+        .fa-close {
+            display: none;
+        }
+    }
+
+    .ui-messages.ui-messages-warn, .ui-messages.ui-message-warn {
+        color: $warningTextColor;
+        background-color: $warningColor;
+        border-color: $warningColor;
+
+        span {
+            color: $warningTextColor;
+        }
+    }
+
+    app-form-messages {
+        .ui-message {
+            padding: 0;
+        }
+    }
+
+    .ui-message {
+        padding: $headerPadding;
+    }
+
+    .ui-message.ui-message-info {
+        color: $infoTextColor;
+        background-color: $infoColor;
+        border-color: $infoColor;
+
+        span {
+            color: $infoTextColor;
+        }
+    }
+
+    .ui-chkbox, .ui-radiobutton {
+        .ui-chkbox-box, .ui-radiobutton-box {
+            &.ui-state-active {
+                border-color: $primaryColor;
+                background-color: $primaryColor;
+            }
+        }
+    }
+
+    .app-field-label {
+        display: block;
+        color: $textLabelColor;
+        margin-bottom: 1px;
+        margin-top: -17px;
+        font-size: 12px;
+    }
+
+    .mr-0 {
+        margin-right: 0 !important;
+    }
+
+    .mt-0 {
+        margin-top: 0;
+    }
+
+    .mt-1 {
+        margin-top: 10px;
+    }
+
+    .mt-2 {
+        margin-top: 20px;
+    }
+
+    .mt-3 {
+        margin-top: 30px;
+    }
+
+    .mt-4 {
+        margin-top: 50px;
+    }
+
+    .mt-5 {
+        margin-top: 50px;
+    }
+
+    .mb-0 {
+        margin-bottom: 0;
+    }
+
+    .mb-1 {
+        margin-bottom: 10px;
+    }
+
+    .mb-2 {
+        margin-bottom: 20px;
+    }
+
+    .mb-3 {
+        margin-bottom: 30px;
+    }
+
+    .mb-4 {
+        margin-bottom: 50px;
+    }
+
+    .mb-5 {
+        margin-bottom: 50px;
+    }
+
+    .fake-link {
+        cursor: pointer;
+        color: $linkColor;
+    }
+
+    .text-center {
+        text-align: center;
+    }
+}

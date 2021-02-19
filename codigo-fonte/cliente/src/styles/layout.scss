@@ -1,0 +1,87 @@
+$primaryColor: #2A67BC;
+$primaryDarkColor: #0041B2;
+$primaryLightColor: lighten(#2A67BC, 10%);
+$accentColor: #2F96B4;
+$accentDarkColor: darken(#2F96B4, 10%);
+$accentLightColor: lighten(#2F96B4, 10%);
+$accentTextColor: #ffffff;
+$deletedColor: #FF5722;
+$deletedTextColor: #ffffff;
+$darkMenuBgColor: #424242;
+$darkMenuHoverColor: #676767;
+$darkMenuRouterLinkActiveColor: #0041B2;
+$lightMenuRouterLinkActiveColor: lighten(#2A67BC, 10%);
+$horizontalLightMenuRouterLinkActiveColor: #0041B2;
+
+// @todo descobrir uma forma de importar o SCSS da lib em vez de importar do assert/lib/ultimang
+// @todo deletar o assert/lib o correto seria importar o scss da lib em vez do local (ajuste técnico)
+
+@import "../assets/sass/layout/_layout";
+
+.badge-primary {
+    padding: 2px 4px;
+    background-color: $primaryColor;
+    color: #fff;
+    font-weight: bold;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    margin: 0px 2px;
+    line-height: 25px;
+}
+
+.badge-deleted {
+    padding: 2px 4px;
+    background-color: $deletedColor;
+    color: $deletedTextColor;
+    font-weight: bold;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    margin: 0px 2px;
+    line-height: 25px;
+}
+
+app-page-management, app-page-portal {
+    .footer {
+        padding: 0 !important;
+        .card {
+            margin-bottom: 0 !important;
+            background: $primaryColor;
+            color: #fff !important;
+
+            .footer-text-right {
+                color: #fff !important;
+            }
+        }
+    }
+
+}
+
+app-page-management {
+    ung-inline-profile {
+        .profile {
+            height: 72px !important;
+        }
+    }
+
+    .layout-main {
+
+        & > .layout-content {
+            min-height: calc(100vh - 198px);
+            display: block;
+        }
+
+    }
+}
+
+app-page-portal {
+    .layout-main {
+
+        & > .layout-content {
+            min-height: calc(100vh - 191px);
+            display: block;
+        }
+
+    }
+}

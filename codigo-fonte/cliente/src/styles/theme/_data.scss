@@ -1,0 +1,12 @@
+body {
+    .ui-table {
+
+        .ui-table-loading-content {
+            .fa-spin {
+                animation: a 2s infinite linear;
+                -webkit-animation: a 2s infinite linear;
+            }
+        }
+
+    }
+}
