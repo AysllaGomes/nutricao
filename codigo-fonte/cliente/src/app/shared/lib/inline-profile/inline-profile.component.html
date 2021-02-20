@@ -1,0 +1,34 @@
+<div class="profile" [ngClass]="{'profile-expanded':active}">
+    <a href="#" (click)="onClick($event)">
+        <img *ngIf="credential?.image" class="profile-image" [src]="credential.image"/>
+        <span *ngIf="credential" class="profile-name">{{sessionData.individual.name}}</span>
+        <i class="material-icons">keyboard_arrow_down</i>
+    </a>
+</div>
+
+<!-- @todo utilizar a diretiva ung-submenu para gerar os submenus -->
+
+<ul *ngIf="submenuItemList && submenuItemList.length"
+    [@menu]="active ? 'visible' : 'hidden'"
+    class="ultima-menu profile-menu">
+
+    <ng-template ngFor let-item let-i="index" [ngForOf]="submenuItemList">
+        <li *ngIf="item.visible">
+
+            <a *ngIf="item.command"
+               (click)="item.command($event)"
+               class="ripplelink">
+                <i class="material-icons">{{item.icon}}</i>
+                <span>{{item.label}}</span>
+            </a>
+
+            <a *ngIf="item.routerLink"
+               [routerLink]="item.routerLink"
+               class="ripplelink">
+                <i class="material-icons">{{item.icon}}</i>
+                <span>{{item.label}}</span>
+            </a>
+
+        </li>
+    </ng-template>
+</ul>

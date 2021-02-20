@@ -1,0 +1,15 @@
+<div class="exception-body accessdenied-page">
+    <div class="exception-type p-5">
+        <img src="../../../assets/layout/images/401.svg">
+    </div>
+
+    <div class="card exception-panel" style="margin-top: -190px">
+        <i class="material-icons">&#xE32A;</i>
+        <h1>Acesso negado</h1>
+        <div class="exception-detail">{{message}}</div>
+        <a [routerLink]="['/']"
+           class="ui-button secondary">
+            <span class="ui-button-text">Voltar para tela inicial</span>
+        </a>
+    </div>
+</div>

@@ -9,6 +9,7 @@ import { TranslateModule } from '@ngx-translate/core';
 
 import { AppComponent } from './app.component';
 
+import { PageModule } from './page/page.module';
 import { SharedModule } from './shared/shared.module';
 import { AppRoutingModule } from './app-routing.module';
 
@@ -25,8 +26,9 @@ export function tokenGetter () {
     imports: [
         RouterModule,
         BrowserModule,
-        SharedModule,
         AppRoutingModule,
+        PageModule,
+        SharedModule,
         BrowserAnimationsModule,
         TranslateModule.forRoot(),
         JwtModule.forRoot({

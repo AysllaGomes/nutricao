@@ -1,0 +1,41 @@
+<div class="layout-wrapper" [ngClass]="{'layout-compact':layoutCompact}" (click)="onLayoutClick()">
+
+    <div #layoutContainer class="layout-container"
+         [ngClass]="{'menu-layout-static': !isOverlay(),
+            'menu-layout-overlay': isOverlay(),
+            'layout-menu-overlay-active': overlayMenuActive,
+            'menu-layout-horizontal': isHorizontal(),
+            'menu-layout-slim': isSlim(),
+            'layout-menu-static-inactive': staticMenuDesktopInactive,
+            'layout-menu-static-active': staticMenuMobileActive}">
+
+        <ung-topbar></ung-topbar>
+
+        <div class="layout-menu" [ngClass]="{'layout-menu-dark':darkMenu}" (click)="onMenuClick($event)">
+            <p-scrollPanel #scrollPanel [style]="{height: '100%'}">
+
+                <ung-inline-profile *ngIf="profileMode=='inline'&&!isHorizontal()"
+                                    [submenuItemList]="profileSubmenuItemList"></ung-inline-profile>
+
+                <ung-menu [reset]="resetMenu" [model]="submenuItemList"></ung-menu>
+
+            </p-scrollPanel>
+        </div>
+
+        <div class="layout-main">
+
+            <ung-breadcrumb *ngIf="showBreadcrumb"></ung-breadcrumb>
+
+            <div class="layout-content">
+                <router-outlet></router-outlet>
+            </div>
+
+            <ung-footer></ung-footer>
+        </div>
+
+        <ung-rightpanel></ung-rightpanel>
+
+        <div class="layout-mask"></div>
+    </div>
+
+</div>
