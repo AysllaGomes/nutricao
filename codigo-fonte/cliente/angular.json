@@ -20,6 +20,12 @@
                 "build": {
                     "builder": "@angular-devkit/build-angular:browser",
                     "options": {
+                        "allowedCommonJsDependencies": [
+                            "lodash",
+                            "rxjs/internal/Subject",
+                            "rxjs/internal/Observable",
+                            "rxjs/internal/observable/throwError"
+                        ],
                         "outputPath": "dist/nutricao",
                         "index": "src/index.html",
                         "main": "src/main.ts",

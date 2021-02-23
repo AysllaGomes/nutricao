@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { JwtModule } from '@auth0/angular-jwt';
@@ -26,6 +26,7 @@ export function tokenGetter () {
     imports: [
         RouterModule,
         BrowserModule,
+        HttpClientModule,
         AppRoutingModule,
         PageModule,
         SharedModule,
