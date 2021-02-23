@@ -1,23 +1,23 @@
 @import '../assets/sass/_variables';
 
 $linkColor: #0000FF;
-$primaryColor: #2A67BC;
-$primaryDarkColor: #0041B2;
+$primaryColor: #73A942;
+$primaryDarkColor: darken($primaryColor, 10%);
 $primaryLightColor: lighten($primaryColor, 10%);
 $accentColor: #2F96B4;
 $accentDarkColor: darken($accentColor, 10%);
 $accentLightColor: lighten($accentColor, 10%);
-$accentTextColor: #ffffff;
-$inputErrorTextColor: #ab1a0f;
-$inputBorderErrorColor: #ab1a0f;
-$invalidInputLabelColor: #ab1a0f;
-$invalidInputBorderColor: #ab1a0f;
+$accentTextColor: #FFFFFF;
+$inputErrorTextColor: #AB1A0F;
+$inputBorderErrorColor: #AB1A0F;
+$invalidInputLabelColor: #AB1A0F;
+$invalidInputBorderColor: #AB1A0F;
 
-$infoTextColor: #ffffff;
+$infoTextColor: #FFFFFF;
 $infoColor: #2196F3;
 $infoDarkColor: darken($infoColor, 10%);
 
-$warningColor: #ffc107;
+$warningColor: #FFC107;
 $warningDarkColor: darken($warningColor, 10%);
 $warningLightColor: lighten($warningColor, 10%);
 $warningTextColor: #856404;

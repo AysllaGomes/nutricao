@@ -1,16 +1,16 @@
-$primaryColor: #2A67BC;
-$primaryDarkColor: #0041B2;
-$primaryLightColor: lighten(#2A67BC, 10%);
-$accentColor: #2F96B4;
-$accentDarkColor: darken(#2F96B4, 10%);
-$accentLightColor: lighten(#2F96B4, 10%);
-$accentTextColor: #ffffff;
+$primaryColor: #73A942;
+$primaryDarkColor: darken($primaryColor, 10%);
+$primaryLightColor: lighten($primaryColor, 10%);
+$accentColor: #282932;
+$accentDarkColor: darken($accentColor, 10%);
+$accentLightColor: lighten($accentColor, 10%);
+$accentTextColor: #FFFFFFF;
 $deletedColor: #FF5722;
-$deletedTextColor: #ffffff;
+$deletedTextColor: #FFFFFFF;
 $darkMenuBgColor: #424242;
 $darkMenuHoverColor: #676767;
 $darkMenuRouterLinkActiveColor: #0041B2;
-$lightMenuRouterLinkActiveColor: lighten(#2A67BC, 10%);
+$lightMenuRouterLinkActiveColor: lighten($primaryColor, 10%);
 $horizontalLightMenuRouterLinkActiveColor: #0041B2;
 
 // @todo descobrir uma forma de importar o SCSS da lib em vez de importar do assert/lib/ultimang
@@ -21,7 +21,7 @@ $horizontalLightMenuRouterLinkActiveColor: #0041B2;
 .badge-primary {
     padding: 2px 4px;
     background-color: $primaryColor;
-    color: #fff;
+    color: $accentTextColor;
     font-weight: bold;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
