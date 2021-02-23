@@ -9,15 +9,10 @@ export class LoadingService {
 
     constructor() {}
 
-    enable() {
-        this.active = true;
-    }
+    enable() { return this.active = true; }
 
-    disable() {
-        this.active = false;
-    }
+    disable() { return this.active = false; }
 
-    isLoading() {
-        return this.active;
-    }
+    isLoading() { return this.active; }
+
 }

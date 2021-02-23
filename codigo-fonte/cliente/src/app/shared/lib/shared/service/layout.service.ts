@@ -1,4 +1,4 @@
-import {ElementRef, Injectable, NgZone} from '@angular/core';
+import { ElementRef, Injectable, NgZone } from '@angular/core';
 
 import { ScrollPanel } from 'primeng/scrollpanel';
 
@@ -69,8 +69,9 @@ export class LayoutService {
 
     rippleMouseDownListener: any;
 
-    constructor(public zone: NgZone) {
-    }
+    constructor(
+        public zone: NgZone
+    ) {}
 
     initRippleEvents() {
         this.zone.runOutsideAngular(() => {

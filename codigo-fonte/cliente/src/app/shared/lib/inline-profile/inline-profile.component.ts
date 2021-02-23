@@ -26,17 +26,21 @@ import { AuthService } from '../../../auth/shared/service/auth.service';
 })
 export class InlineProfileComponent implements OnInit {
 
-    @Input() submenuItemList: SubmenuItem[];
+    @Input()
+    submenuItemList: SubmenuItem[];
 
     active: boolean;
+
     sessionData: any;
 
     get credential(): Credential {
         return this.layoutService.credential;
     }
 
-    constructor(public layoutService: LayoutService, protected authService: AuthService) {
-    }
+    constructor(
+        public layoutService: LayoutService,
+        protected authService: AuthService
+    ) {}
 
     ngOnInit() {
         this.getDateSession();
@@ -54,6 +58,6 @@ export class InlineProfileComponent implements OnInit {
         this.sessionData = this.authService.getCredential(true)
             ? this.authService.getCredential(true)
             : this.authService.getCredential();
-
     }
+
 }

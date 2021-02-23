@@ -1,9 +1,14 @@
-import {Component, ElementRef, ViewChild} from '@angular/core';
-import {LayoutService} from "../../shared/service/layout.service";
-import {Page} from "../page";
-import {ProfileMode} from "../../shared/enum/profile-mode.enum";
-import {SubmenuItem} from "../../submenu/model/submenu-item";
-import {ScrollPanel} from "primeng/scrollpanel";
+import { Component, ElementRef, ViewChild } from '@angular/core';
+
+import { ScrollPanel } from 'primeng/scrollpanel';
+
+import { Page } from '../page';
+
+import { SubmenuItem } from '../../submenu/model/submenu-item';
+
+import { ProfileMode } from '../../shared/enum/profile-mode.enum';
+
+import { LayoutService } from '../../shared/service/layout.service';
 
 @Component({
     selector: 'ung-page-default',
@@ -12,8 +17,9 @@ import {ScrollPanel} from "primeng/scrollpanel";
 })
 export class PageDefaultComponent implements Page {
 
-    constructor(public layoutService: LayoutService) {
-    }
+    constructor(
+        public layoutService: LayoutService
+    ) {}
 
     get profileSubmenuItemList(): SubmenuItem[] {
         return this.layoutService.profileSubmenuItemList;

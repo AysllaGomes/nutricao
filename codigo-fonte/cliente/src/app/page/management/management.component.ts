@@ -3,12 +3,12 @@ import { Component, OnInit } from '@angular/core';
 
 import { TranslateService } from '@ngx-translate/core';
 
-import { LayoutService } from '../../shared/service/layout.service';
-import { AuthService } from '../../auth/shared/service/auth.service';
-import { BreadcrumbService } from '../../shared/service/breadcrumb.service';
-import { AuthorizerService } from '../../auth/shared/service/authorizer.service';
-
 import { Credential as UngCredential } from '../../shared/model/credential.model';
+
+import { AuthService } from '../../auth/shared/service/auth.service';
+import { LayoutService } from '../../shared/lib/shared/service/layout.service';
+import { AuthorizerService } from '../../auth/shared/service/authorizer.service';
+import { BreadcrumbService } from '../../shared/lib/shared/service/breadcrumb.service';
 
 @Component({
     selector: 'app-page-management',
@@ -31,7 +31,6 @@ export class PageManagementComponent implements OnInit {
          * @todo Importar no component principal do módulo nao é viavel
          */
 
-        // const browserLang = translate.getBrowserLang();
         const browserLang = 'pt';
 
         const useBrowserLang = browserLang.match(/pt|en/)

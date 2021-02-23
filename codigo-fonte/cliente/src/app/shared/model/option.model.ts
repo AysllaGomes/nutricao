@@ -1,6 +1,8 @@
 export class Option {
 
     /**
+     * Option constructor.
+     *
      * @param {number | string} value
      * @param {string} label
      */

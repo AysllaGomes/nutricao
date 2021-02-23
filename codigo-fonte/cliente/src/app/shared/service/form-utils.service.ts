@@ -1,5 +1,5 @@
-import {Injectable} from '@angular/core';
-import {AbstractControl, FormArray, FormGroup, ValidationErrors} from '@angular/forms';
+import { Injectable } from '@angular/core';
+import { AbstractControl, FormArray, FormGroup, ValidationErrors } from '@angular/forms';
 
 import * as _ from 'lodash';
 import * as moment from 'moment';

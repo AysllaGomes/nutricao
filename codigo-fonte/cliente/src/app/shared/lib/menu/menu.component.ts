@@ -1,5 +1,6 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {SubmenuItem} from "../submenu/model/submenu-item";
+import { Component, Input, OnInit } from '@angular/core';
+
+import { SubmenuItem } from '../submenu/model/submenu-item';
 
 @Component({
     selector: 'ung-menu',
@@ -8,15 +9,14 @@ import {SubmenuItem} from "../submenu/model/submenu-item";
 })
 export class MenuComponent implements OnInit {
 
-    @Input() reset: boolean;
+    @Input()
+    reset: boolean;
 
-    @Input() model: SubmenuItem[];
+    @Input()
+    model: SubmenuItem[];
 
-    constructor() {
-    }
+    constructor() {}
 
-    ngOnInit() {
-
-    }
+    ngOnInit() {}
 
 }

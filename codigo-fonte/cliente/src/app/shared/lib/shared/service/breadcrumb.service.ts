@@ -1,7 +1,9 @@
-import {Injectable} from '@angular/core';
-import {Subject} from "rxjs/internal/Subject";
-import {Observable} from "rxjs/internal/Observable";
-import {SubmenuItem} from "../../submenu/model/submenu-item";
+import { Injectable } from '@angular/core';
+
+import { Subject } from 'rxjs/internal/Subject';
+import { Observable } from 'rxjs/internal/Observable';
+
+import { SubmenuItem } from '../../submenu/model/submenu-item';
 
 @Injectable({
     providedIn: 'root'
@@ -25,4 +27,5 @@ export class BreadcrumbService {
     disableRightItems() {
         this.showRightItems = false;
     }
+
 }
