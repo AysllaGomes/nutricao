@@ -21,6 +21,8 @@
                     "builder": "@angular-devkit/build-angular:browser",
                     "options": {
                         "allowedCommonJsDependencies": [
+                            "util",
+                            "jquery",
                             "lodash",
                             "rxjs/internal/Subject",
                             "rxjs/internal/Observable",

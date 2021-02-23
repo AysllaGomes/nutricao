@@ -1,0 +1,31 @@
+<div class="ui-fluid">
+    <div class="ui-g">
+        <div class="ui-g-12 ui-md-6 ui-md-offset-3 ui-lg-4 ui-lg-offset-4">
+
+            <div class="card no-margin">
+
+                <h1>Autenticação</h1>
+
+<!--                <app-auth-login-form (onCreateForm)="onCreateForm($event)"></app-auth-login-form>-->
+
+                <div class="ui-g form-group">
+                    <div class="ui-g-12">
+
+                        <button
+                            pButton
+                            type="submit"
+                            (click)="authenticate()"
+                            [disabled]="canDisableSubmit()"
+                            class="primary ui-button-fluid"
+                            icon="fa ui-icon-person"
+                            label="Entrar">
+                        </button>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>

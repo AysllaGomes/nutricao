@@ -4,7 +4,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ModuleWithProviders, NgModule } from '@angular/core';
 
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { TranslateLoader , TranslateModule} from '@ngx-translate/core';
+import { TranslateLoader , TranslateModule } from '@ngx-translate/core';
 
 import { MaskPipe } from './pipe/mask.pipe';
 import { UltimangModule } from './lib/ultimang.module';
@@ -26,7 +26,7 @@ import { PAGE_SHARED_COMPONENTS } from '../page/shared/page-shared-components';
             }
         }),
         UltimangModule,
-        LoadingModule,
+        LoadingModule
     ],
     declarations: [
         MaskPipe,

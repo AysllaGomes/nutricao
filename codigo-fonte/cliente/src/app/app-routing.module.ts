@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+import { AuthLoginComponent } from './auth/login/login.component';
 import { PagePortalComponent } from './page/portal/portal.component';
 import { PageNotFoundComponent } from './page/not-found/not-found.component';
 import { PageManagementComponent } from './page/management/management.component';
@@ -18,13 +19,18 @@ const routes: Routes = [
     {
         path: '',
         component: PagePortalComponent,
-        // canActivate: [NotRequiresLoginGuard],
-        children: [ ]
+        canActivate: [NotRequiresLoginGuard],
+        children: [
+            {
+                path: '',
+                component: AuthLoginComponent
+            }
+        ]
     },
     {
         path: '',
         component: PageManagementComponent,
-        // canActivate: [RequiresLoginGuard],
+        canActivate: [RequiresLoginGuard],
         children: [ ]
     },
     {
