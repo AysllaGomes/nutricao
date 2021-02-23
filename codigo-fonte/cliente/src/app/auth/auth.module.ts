@@ -1,24 +1,19 @@
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms';
 import { ModuleWithProviders, NgModule } from '@angular/core';
 
 import { ButtonModule } from 'primeng/button';
 
-import { SharedModule } from '../shared/shared.module';
-
 import { AuthLoginComponent } from './login/login.component';
 import { AuthLoginFormComponent } from './login/form/form.component';
-import {ReactiveFormsModule} from "@angular/forms";
-import {InputTextModule} from "primeng/inputtext";
 
 @NgModule({
     imports: [
         CommonModule,
-        ButtonModule,
         RouterModule,
-        SharedModule,
-        ReactiveFormsModule,
-        InputTextModule
+        ButtonModule,
+        ReactiveFormsModule
     ],
     declarations: [
         AuthLoginComponent,
