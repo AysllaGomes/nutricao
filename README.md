@@ -3,7 +3,7 @@
 O sistema "Nutrição" é uma aplicação desenvolvida com Laravel e Angular. Deve-se seguir atentamente
 as orientações a seguir para configurar o seu ambiente.
 
-1º- O projeto necessita que sejam instalados o "docker", "docker-compose", "node", "npm instalados" em seu ambiente.
+1º- O projeto necessita que sejam instalados o "docker" e "docker-compose" em seu ambiente.
 
 2º- Verifique o ambiente que deseja subir e confirme se o job no jenkis esta correto.
 
