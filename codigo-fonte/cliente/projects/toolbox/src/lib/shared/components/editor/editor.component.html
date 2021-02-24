@@ -1,0 +1,42 @@
+<p-editor #editorComponent
+          [(ngModel)]="value"
+          (onInit)="configEditor($event.editor)"
+          [style]="{'height':height}"
+          [readonly]="disabled"
+          [title]="title">
+
+    <p-header>
+        <div *ngIf="!disabled">
+            <span class="ql-formats">
+
+                <button class="ql-bold" aria-label="Bold"></button>
+
+                <button class="ql-italic" aria-label="Italic"></button>
+
+                <button class="ql-underline" aria-label="Underline"></button>
+
+                <select *ngIf="showFontColor" class="ql-color" defaultValue="rgb(0, 0, 0)"></select>
+
+                <select *ngIf="showBackgroundColor" title="Background Color" class="ql-background"
+                        defaultValue="rgb(255, 255, 255)"></select>
+
+                <button class="ql-list" aria-label="Unordered List" value="bullet"></button>
+
+                <select title="Text Alignment" class="ql-align">
+                    <option selected>Gauche</option>
+                    <option value="center" label="Center"></option>
+                    <option value="right" label="Right"></option>
+                    <option value="justify" label="Justify"></option>
+                </select>
+
+                <button class="ql-link" aria-label="Insert Link"></button>
+
+                <button *ngIf="showInsertImage" class="ql-image" aria-label="Insert Image"></button>
+
+            </span>
+        </div>
+    </p-header>
+
+</p-editor>
+
+<p-message *ngFor="let message of errorMessage" severity="error" [text]="message.detail"></p-message>

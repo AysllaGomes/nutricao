@@ -6,9 +6,9 @@ import { TranslateService } from '@ngx-translate/core';
 import { Credential as UngCredential } from '../../shared/model/credential.model';
 
 import { AuthService } from '../../auth/shared/service/auth.service';
-import { LayoutService } from '../../shared/lib/shared/service/layout.service';
 import { AuthorizerService } from '../../auth/shared/service/authorizer.service';
-import { BreadcrumbService } from '../../shared/lib/shared/service/breadcrumb.service';
+import { LayoutService } from '../../../../projects/ultimang/src/lib/shared/service/layout.service';
+import { BreadcrumbService } from '../../../../projects/ultimang/src/lib/shared/service/breadcrumb.service';
 
 @Component({
     selector: 'app-page-management',

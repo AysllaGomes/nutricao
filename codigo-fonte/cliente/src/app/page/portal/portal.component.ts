@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { TranslateService } from '@ngx-translate/core';
 
-import { LayoutService } from '../../shared/lib/shared/service/layout.service';
+import { LayoutService } from '../../../../projects/ultimang/src/lib/shared/service/layout.service';
 
 @Component({
     selector: 'app-page-portal',

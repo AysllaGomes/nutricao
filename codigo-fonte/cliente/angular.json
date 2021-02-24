@@ -24,6 +24,7 @@
                             "util",
                             "jquery",
                             "lodash",
+                            "chart.js",
                             "rxjs/internal/Subject",
                             "rxjs/internal/Observable",
                             "rxjs/internal/observable/throwError"
@@ -36,12 +37,23 @@
                         "aot": true,
                         "assets": [
                             "src/favicon.ico",
-                            "src/assets"
+                            "src/assets",
+                            "src/assets/CNAME",
+                            "src/assets/sitemap.xml",
+                            "src/assets/googled41787c6aae2151b.html"
                         ],
                         "styles": [
-                            "src/styles.scss"
+                            "src/styles.scss",
+                            "node_modules/quill/dist/quill.core.css",
+                            "node_modules/quill/dist/quill.snow.css",
+                            "node_modules/primeng/resources/primeng.min.css",
+                            "src/assets/css/fontawesome/css/fontawesome-all.min.css"
                         ],
-                        "scripts": []
+                        "scripts": [
+                            "src/assets/js/gtm.js",
+                            "node_modules/quill/dist/quill.js",
+                            "node_modules/sweetalert/dist/sweetalert.min.js"
+                        ]
                     },
                     "configurations": {
                         "production": {

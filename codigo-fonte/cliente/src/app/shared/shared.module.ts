@@ -7,8 +7,8 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TranslateLoader , TranslateModule } from '@ngx-translate/core';
 
 import { MaskPipe } from './pipe/mask.pipe';
-import { UltimangModule } from './lib/ultimang.module';
 import { LoadingModule } from './components/loading/loading.module';
+import { UltimangModule } from '../../../projects/ultimang/src/lib/ultimang.module';
 
 import { PAGE_SHARED_COMPONENTS } from '../page/shared/page-shared-components';
 
@@ -25,8 +25,8 @@ import { PAGE_SHARED_COMPONENTS } from '../page/shared/page-shared-components';
                 deps: [HttpClient]
             }
         }),
-        UltimangModule,
-        LoadingModule
+        LoadingModule,
+        UltimangModule
     ],
     declarations: [
         MaskPipe,

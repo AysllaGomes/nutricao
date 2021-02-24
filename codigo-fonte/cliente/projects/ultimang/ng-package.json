@@ -1,0 +1,8 @@
+{
+  "$schema": "../../node_modules/primeng/package.json",
+  "dest": "../../dist/ultimang",
+  "deleteDestPath": false,
+  "lib": {
+    "entryFile": "src/public_api.ts"
+  }
+}

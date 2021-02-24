@@ -3,7 +3,6 @@ import { RouterModule } from '@angular/router';
 import { ModuleWithProviders, NgModule } from '@angular/core';
 
 import { ScrollPanelModule } from 'primeng/scrollpanel';
-import { UltimangModule } from '../shared/lib/ultimang.module';
 
 import { PageNotFoundComponent } from './not-found/not-found.component';
 import { PageAccessDeniedComponent } from './access-denied/access-denied.component';
@@ -13,7 +12,6 @@ import { PageAccessDeniedComponent } from './access-denied/access-denied.compone
         CommonModule,
         RouterModule,
         ScrollPanelModule,
-        UltimangModule
     ],
     declarations: [
         PageNotFoundComponent,

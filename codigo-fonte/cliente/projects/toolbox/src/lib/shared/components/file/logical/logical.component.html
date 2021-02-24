@@ -1,0 +1,18 @@
+<tbx-file
+    [(ngModel)]="fileList"
+    (onRemove)="onRemove($event.file)"
+    (onSelect)="onAdd($event.files)"
+    (onClickDocument)="clickDocument($event)"
+    [files]="fileList"
+    [multiple]="multiple"
+    [maxFileSize]="maxFileSize"
+    [invalidFileTypeMessageDetail]="invalidFileTypeMessageDetail"
+    [invalidFileSizeMessageSummary]="invalidFileSizeMessageSummary"
+    [invalidFileTypeMessageSummary]="invalidFileTypeMessageSummary"
+    [invalidFileSizeMessageDetail]="invalidFileSizeMessageDetail"
+    [accept]="accept"
+    [showSearch]="showSearch"
+    [showRemove]="showRemove"
+    [showDownload]="showDownload"
+    [exclusionConfirmation]="exclusionConfirmation">
+</tbx-file>

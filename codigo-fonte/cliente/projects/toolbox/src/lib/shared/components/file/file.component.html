@@ -1,0 +1,41 @@
+<button *ngIf="showSearch"
+        pButton
+        (click)="basicfileinput.click()"
+        [disabled]="disabled"
+        [ngClass]="{'special-border': hasFiles()}"
+        [label]="chooseLabel"
+        class="secondary"
+        icon="fa ui-icon-cloud-upload">
+</button>
+
+<input #basicfileinput type="file"
+       (change)="onFileSelect($event)"
+       (focus)="onFocus()"
+       (blur)="onBlur()"
+       [hidden]="true"
+       [accept]="accept"
+       [multiple]="multiple"
+       [disabled]="isDisabled()">
+
+<p-messages [value]="msgs" [enableService]="false"></p-messages>
+
+<p-dataView *ngIf="hasFiles()"
+            [value]="files"
+            [alwaysShowPaginator]="false">
+
+    <ng-template pTemplate="listItem" let-i="rowIndex" let-file>
+        <div class="file-container clickable">
+            <div (click)="clickDocument(file)" [ngClass]="{'deleted': isRemoved(file)}">
+                {{file.name}}
+            </div>
+            <div *ngIf="canRemove(file)" class="file-action">
+                <button pButton
+                        (click)="remove(i)"
+                        icon="fa ui-icon-delete"
+                        class="secondary">
+                </button>
+            </div>
+        </div>
+    </ng-template>
+
+</p-dataView>
