@@ -4,6 +4,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ModuleWithProviders, NgModule } from '@angular/core';
 
 import { ButtonModule } from 'primeng/button';
+import { InputTextModule } from 'primeng/inputtext';
 
 import { AuthLoginComponent } from './login/login.component';
 import { AuthLoginFormComponent } from './login/form/form.component';
@@ -13,7 +14,8 @@ import { AuthLoginFormComponent } from './login/form/form.component';
         CommonModule,
         RouterModule,
         ButtonModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        InputTextModule
     ],
     declarations: [
         AuthLoginComponent,

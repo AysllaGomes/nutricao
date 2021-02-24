@@ -8,11 +8,9 @@
                 <input pInputText
                        formControlName="_username"
                        maxlength="254"
+                       title="Login"
                        id="auth.login-form-username">
-                <!--                       title="{{ 'auth.login.fields.username.title' | translate }}"-->
-<!--                <label for="auth.login-form-username">-->
-<!--                    {{ 'auth.login.fields.username.label' | translate }} *-->
-<!--                </label>-->
+                <label for="auth.login-form-username">Login *</label>
             </span>
 
 <!--            <app-form-messages [control]="form.get('_username')"></app-form-messages>-->
@@ -27,10 +25,7 @@
                        formControlName="_password"
                        maxlength="254"
                        id="auth.login-form-password">
-                <!--                       title="{{ 'auth.login.fields.password.title' | translate }}"-->
-<!--                <label for="auth.login-form-password">-->
-<!--                    {{ 'auth.login.fields.password.label' | translate }} *-->
-<!--                </label>-->
+                <label for="auth.login-form-password">Senha *</label>
             </span>
 
 <!--            <app-form-messages [control]="form.get('_password')"></app-form-messages>-->
