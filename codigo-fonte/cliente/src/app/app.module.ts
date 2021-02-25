@@ -24,14 +24,11 @@ export function tokenGetter () {
 
 @NgModule({
     imports: [
-        RouterModule,
         BrowserModule,
-        HttpClientModule,
+        BrowserAnimationsModule,
         AppRoutingModule,
         PageModule,
         SharedModule,
-        BrowserAnimationsModule,
-        TranslateModule.forRoot(),
         JwtModule.forRoot({
             config: {
                 tokenGetter: tokenGetter,
