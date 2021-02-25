@@ -1,0 +1,6 @@
+<div *ngIf="needShowError()">
+    <p-message
+        *ngFor="let error of getErrors()"
+        [text]="getMessageError(error)" severity="error">
+    </p-message>
+</div>

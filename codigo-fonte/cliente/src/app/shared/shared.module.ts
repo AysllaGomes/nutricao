@@ -7,13 +7,16 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 
 import { MaskPipe } from './pipe/mask.pipe';
-import { LoadingModule } from './components/loading/loading.module';
-import { ToolboxModule } from '../../../projects/toolbox/src/lib/toolbox.module';
-import { UltimangModule } from '../../../projects/ultimang/src/lib/ultimang.module';
 
 import { AUTH_SHARED_COMPONENTS } from '../auth/shared/auth-shared-components';
 import { PAGE_SHARED_COMPONENTS } from '../page/shared/page-shared-components';
+
 import { PRIMENG_IMPORTS } from '../../../projects/ultimang/src/lib/primeng-imports';
+
+import { LoadingModule } from './components/loading/loading.module';
+import { ToolboxModule } from '../../../projects/toolbox/src/lib/toolbox.module';
+import { UltimangModule } from '../../../projects/ultimang/src/lib/ultimang.module';
+import { SharedFormMessagesModule } from './components/form/messages/messages.module';
 
 @NgModule({
     imports: [
@@ -22,6 +25,7 @@ import { PRIMENG_IMPORTS } from '../../../projects/ultimang/src/lib/primeng-impo
         HttpClientModule,
         UltimangModule,
         ToolboxModule,
+        SharedFormMessagesModule,
         LoadingModule,
         TranslateModule.forRoot({
             loader: {
@@ -43,6 +47,7 @@ import { PRIMENG_IMPORTS } from '../../../projects/ultimang/src/lib/primeng-impo
         UltimangModule,
         ToolboxModule,
         TranslateModule,
+        SharedFormMessagesModule,
         PRIMENG_IMPORTS,
         PAGE_SHARED_COMPONENTS,
         AUTH_SHARED_COMPONENTS,

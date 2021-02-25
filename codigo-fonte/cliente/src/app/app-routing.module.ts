@@ -1,14 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+import { RequiresLoginGuard } from './auth/shared/guard/requires-login-guard.service';
+import { NotRequiresLoginGuard } from './auth/shared/guard/not-requires-login-guard.service';
+
 import { AuthLoginComponent } from './auth/login/login.component';
 import { PagePortalComponent } from './page/portal/portal.component';
 import { PageNotFoundComponent } from './page/not-found/not-found.component';
 import { PageManagementComponent } from './page/management/management.component';
 import { PageAccessDeniedComponent } from './page/access-denied/access-denied.component';
-
-import { RequiresLoginGuard } from './auth/shared/guard/requires-login-guard.service';
-import { NotRequiresLoginGuard } from './auth/shared/guard/not-requires-login-guard.service';
+import { AuthPasswordRecoveryComponent } from './auth/password-recovery/password-recovery.component';
 
 const routes: Routes = [
     {
@@ -24,6 +25,10 @@ const routes: Routes = [
             {
                 path: '',
                 component: AuthLoginComponent
+            },
+            {
+                path: 'recuperar-acesso',
+                component: AuthPasswordRecoveryComponent
             }
         ]
     },

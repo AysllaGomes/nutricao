@@ -15,43 +15,72 @@
 
                             <div class="ui-g-12">
                                 <span class="ui-float-label">
-                                    <input title="E-mail do usuário" formControlName="username"
-                                           id="credential-login-username" maxlength="100">
+                                    <input pInputText
+                                           formControlName="_username"
+                                           maxlength="254"
+                                           title="{{ 'auth.login.fields.username.title' | translate }}"
+                                           id="auth.login-form-username">
 
-                                    <label for="credential-login-username">E-mail</label>
+                                    <label for="auth.login-form-username">
+                                        {{ 'auth.login.fields.username.label' | translate }} *
+                                    </label>
                                 </span>
-<!--                                <app-template-form-message [field]="form.get('username')"></app-template-form-message>-->
+
+                                <app-form-messages
+                                    [control]="form.get('_username')">
+                                </app-form-messages>
                             </div>
 
                             <div class="ui-g-12">
                                 <span class="ui-float-label">
-                                    <input type="password" name="password" [hidden]="true">
-                                    <input type="password" name="password" formControlName="password"
-                                           id="credential-login-password" title="Senha do usuário" maxlength="8">
+                                    <input pInputText
+                                           type="password"
+                                           formControlName="_password"
+                                           maxlength="254"
+                                           title="{{ 'auth.login.fields.password.title' | translate }}"
+                                           id="auth.login-form-password">
 
-                                    <label for="credential-login-password">Senha</label>
+                                    <label for="auth.login-form-password">
+                                        {{ 'auth.login.fields.password.label' | translate }} *
+                                    </label>
                                 </span>
 
-<!--                                <app-template-form-message [field]="form.get('password')"></app-template-form-message>-->
+                                <app-form-messages
+                                    [control]="form.get('_password')">
+                                </app-form-messages>
                             </div>
                         </div>
 
-                        <div class="ui-g-12">
-                            <button pButton type="submit" label="Entrar" (click)="authenticate()"
-                                    [disabled]="canDisableSubmit()" icon="ui-icon-person" class="secondary">
-                            </button>
-                        </div>
+                        <div class="ui-g form-group">
+                            <div class="ui-g-12">
 
-                        <div class="ui-g-12">
-                            <button pButton type="button" label="Esqueci a senha"
-                                    class="primary" icon="ui-icon-help">
-                            </button>
+                                <button pButton
+                                        type="submit"
+                                        (click)="authenticate()"
+                                        [disabled]="isDisabledSubmit()"
+                                        class="primary ui-button-fluid"
+                                        icon="fa ui-icon-person"
+                                        label="{{'auth.login.actions.access' | translate}}">
+                                </button>
+
+                                <a pButton
+                                   [routerLink]="['/cadastro']"
+                                   class="secondary ui-button-fluid"
+                                   icon="fa ui-icon-plus"
+                                   label="{{'auth.login.actions.register' | translate}}">
+                                </a>
+
+                                <a pButton
+                                   [routerLink]="['/recuperar-acesso']"
+                                   class="secondary ui-button-fluid"
+                                   icon="fa ui-icon-help"
+                                   label="{{'auth.login.actions.recover_password' | translate}}">
+                                </a>
+
+                            </div>
                         </div>
                     </form>
 
-<!--                    <app-password-recovery *ngIf="showRecovery" (hideRecovery)="toggleRecovery()"-->
-<!--                                           class="ui-g-12 ui-g-nopad">-->
-<!--                    </app-password-recovery>-->
                 </div>
             </div>
         </div>
