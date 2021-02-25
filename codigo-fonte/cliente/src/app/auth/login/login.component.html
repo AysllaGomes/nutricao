@@ -1,33 +1,59 @@
-<div class="ui-fluid">
-    <div class="ui-g">
-        <div class="ui-g-12 ui-md-6 ui-md-offset-3 ui-lg-4 ui-lg-offset-4">
+<div class="background-image"></div>
+<div class="mask-background"></div>
+<div class="ui-g ui-fluid">
+    <div>
+        <div class="ui-g-12 ui-g-nopad ui-xl-2">
+            <div class="card card-w-title">
+                <div class="pos-center">
+                    <a>
+                        <div class="margin-auto">
+                            <h1><b>Nome</b> do Site</h1>
+                        </div>
+                    </a>
+                    <form [formGroup]="form">
+                        <div class="ui-g form-group">
 
-            <div class="card no-margin">
+                            <div class="ui-g-12">
+                                <span class="ui-float-label">
+                                    <input title="E-mail do usuário" formControlName="username"
+                                           id="credential-login-username" maxlength="100">
 
-                <h1>Autenticação</h1>
+                                    <label for="credential-login-username">E-mail</label>
+                                </span>
+<!--                                <app-template-form-message [field]="form.get('username')"></app-template-form-message>-->
+                            </div>
 
-<!--                <app-auth-login-form-->
-<!--                    (onCreateForm)="onCreateForm($event)">-->
-<!--                </app-auth-login-form>-->
+                            <div class="ui-g-12">
+                                <span class="ui-float-label">
+                                    <input type="password" name="password" [hidden]="true">
+                                    <input type="password" name="password" formControlName="password"
+                                           id="credential-login-password" title="Senha do usuário" maxlength="8">
 
-                <div class="ui-g form-group">
-                    <div class="ui-g-12">
+                                    <label for="credential-login-password">Senha</label>
+                                </span>
 
-                        <button
-                            pButton
-                            type="submit"
-                            (click)="authenticate()"
-                            [disabled]="canDisableSubmit()"
-                            class="primary ui-button-fluid"
-                            icon="fa ui-icon-person"
-                            label="Entrar">
-                        </button>
+<!--                                <app-template-form-message [field]="form.get('password')"></app-template-form-message>-->
+                            </div>
+                        </div>
 
-                    </div>
+                        <div class="ui-g-12">
+                            <button pButton type="submit" label="Entrar" (click)="authenticate()"
+                                    [disabled]="canDisableSubmit()" icon="ui-icon-person" class="secondary">
+                            </button>
+                        </div>
+
+                        <div class="ui-g-12">
+                            <button pButton type="button" label="Esqueci a senha"
+                                    class="primary" icon="ui-icon-help">
+                            </button>
+                        </div>
+                    </form>
+
+<!--                    <app-password-recovery *ngIf="showRecovery" (hideRecovery)="toggleRecovery()"-->
+<!--                                           class="ui-g-12 ui-g-nopad">-->
+<!--                    </app-password-recovery>-->
                 </div>
-
             </div>
-
         </div>
     </div>
 </div>
