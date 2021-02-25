@@ -1,37 +1,42 @@
 <form [formGroup]="form">
-
-    <div *ngIf="form" class="ui-g form-group">
+    <div class="ui-g form-group">
 
         <div class="ui-g-12">
-
             <span class="ui-float-label">
                 <input pInputText
                        formControlName="_username"
                        maxlength="254"
-                       title="Login"
+                       title="{{ 'auth.login.fields.username.title' | translate }}"
                        id="auth.login-form-username">
-                <label for="auth.login-form-username">Login *</label>
+
+                <label for="auth.login-form-username">
+                    {{ 'auth.login.fields.username.label' | translate }} *
+                </label>
             </span>
 
-<!--            <app-form-messages [control]="form.get('_username')"></app-form-messages>-->
-
+            <app-form-messages
+                [control]="form.get('_username')">
+            </app-form-messages>
         </div>
 
         <div class="ui-g-12">
-
             <span class="ui-float-label">
                 <input pInputText
                        type="password"
                        formControlName="_password"
                        maxlength="254"
+                       title="{{ 'auth.login.fields.password.title' | translate }}"
                        id="auth.login-form-password">
-                <label for="auth.login-form-password">Senha *</label>
+
+                <label for="auth.login-form-password">
+                    {{ 'auth.login.fields.password.label' | translate }} *
+                </label>
             </span>
 
-<!--            <app-form-messages [control]="form.get('_password')"></app-form-messages>-->
-
+            <app-form-messages
+                [control]="form.get('_password')">
+            </app-form-messages>
         </div>
-
     </div>
 
 </form>

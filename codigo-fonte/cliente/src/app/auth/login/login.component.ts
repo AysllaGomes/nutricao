@@ -1,6 +1,9 @@
+import { Router } from '@angular/router';
+import { FormGroup } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
+import { AuthService } from '../shared/service/auth.service';
+import { AlertService } from '../../shared/service/alert.service';
 import { FormUtilsService } from '../../shared/service/form-utils.service';
 
 @Component({
@@ -11,55 +14,56 @@ import { FormUtilsService } from '../../shared/service/form-utils.service';
 
 export class AuthLoginComponent implements OnInit {
 
-    public form: FormGroup;
-    public showRecovery = false;
-    private isEnabledSubmit = true;
+    form: FormGroup;
+
+    accessing = false;
 
     constructor(
-        protected formBuilder: FormBuilder,
+        protected router: Router,
+        protected authService: AuthService,
+        protected alertService: AlertService,
         protected formUtilsService: FormUtilsService
     ) {}
 
-    ngOnInit() {
-        this.form = this.createForm();
+    ngOnInit() {}
+
+    canDisableSubmit(): boolean {
+        return this.accessing;
+    }
+
+    onCreateForm(form: FormGroup) {
+        this.form = form;
+    }
+
+    authenticate(): void {
+
+        if (this.formUtilsService.validate(this.form)) {
+            this.accessing = true;
+
+            this.authService.authenticate(this.form.value)
+                .subscribe(
+                    () => this.saveSuccessAction(),
+                    (error) => this.saveErrorAction(error)
+                );
+        }
+
     }
 
     /**
-     * Cria uma nova instancia do formulário
+     * Ação executada caso sucesso
+     */
+    saveSuccessAction(): void {
+        this.router.navigate(['/dashboard']);
+    }
+
+    /**
+     * Ação executada caso não seja realizada com sucesso
      *
-     * @returns {FormGroup}
+     * @param {string | string[]} error
      */
-    createForm(): FormGroup {
-
-        return this.formBuilder.group({
-            _username: [null, [
-                Validators.required,
-                Validators.maxLength(100)
-            ]],
-            _password: [null, [
-                Validators.required,
-                Validators.maxLength(8),
-            ]]
-        });
-
-    }
-
-    /**
-     * Verifica se a submissão do formulário está desativada
-     *
-     * @returns {boolean}
-     */
-    isDisabledSubmit() {
-        return !this.isEnabledSubmit;
-    }
-
-    /**
-     * Tenta autenticar o usuário
-     */
-    authenticate() {
-
-        if (this.formUtilsService.validate(this.form)) { }
-
+    saveErrorAction(error: string | string[]): void {
+        this.accessing = false;
+        this.alertService.error(null, error);
     }
 
 }

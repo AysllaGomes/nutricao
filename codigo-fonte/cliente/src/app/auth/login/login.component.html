@@ -10,78 +10,39 @@
                             <h1><b>Nome</b> do Site</h1>
                         </div>
                     </a>
-                    <form [formGroup]="form">
-                        <div class="ui-g form-group">
 
-                            <div class="ui-g-12">
-                                <span class="ui-float-label">
-                                    <input pInputText
-                                           formControlName="_username"
-                                           maxlength="254"
-                                           title="{{ 'auth.login.fields.username.title' | translate }}"
-                                           id="auth.login-form-username">
-
-                                    <label for="auth.login-form-username">
-                                        {{ 'auth.login.fields.username.label' | translate }} *
-                                    </label>
-                                </span>
-
-                                <app-form-messages
-                                    [control]="form.get('_username')">
-                                </app-form-messages>
-                            </div>
-
-                            <div class="ui-g-12">
-                                <span class="ui-float-label">
-                                    <input pInputText
-                                           type="password"
-                                           formControlName="_password"
-                                           maxlength="254"
-                                           title="{{ 'auth.login.fields.password.title' | translate }}"
-                                           id="auth.login-form-password">
-
-                                    <label for="auth.login-form-password">
-                                        {{ 'auth.login.fields.password.label' | translate }} *
-                                    </label>
-                                </span>
-
-                                <app-form-messages
-                                    [control]="form.get('_password')">
-                                </app-form-messages>
-                            </div>
-                        </div>
-
-                        <div class="ui-g form-group">
-                            <div class="ui-g-12">
-
-                                <button pButton
-                                        type="submit"
-                                        (click)="authenticate()"
-                                        [disabled]="isDisabledSubmit()"
-                                        class="primary ui-button-fluid"
-                                        icon="fa ui-icon-person"
-                                        label="{{'auth.login.actions.access' | translate}}">
-                                </button>
-
-                                <a pButton
-                                   [routerLink]="['/cadastro']"
-                                   class="secondary ui-button-fluid"
-                                   icon="fa ui-icon-plus"
-                                   label="{{'auth.login.actions.register' | translate}}">
-                                </a>
-
-                                <a pButton
-                                   [routerLink]="['/recuperar-acesso']"
-                                   class="secondary ui-button-fluid"
-                                   icon="fa ui-icon-help"
-                                   label="{{'auth.login.actions.recover_password' | translate}}">
-                                </a>
-
-                            </div>
-                        </div>
-                    </form>
+                    <app-auth-login-form (onCreateForm)="onCreateForm($event)"></app-auth-login-form>
 
                 </div>
+
+                <div class="ui-g form-group">
+                    <div class="ui-g-12">
+
+                        <button pButton
+                                type="submit"
+                                (click)="authenticate()"
+                                [disabled]="canDisableSubmit()"
+                                class="primary ui-button-fluid"
+                                icon="fa ui-icon-person"
+                                label="{{'auth.login.actions.access' | translate}}">
+                        </button>
+
+                        <a pButton
+                           [routerLink]="['/cadastro']"
+                           class="secondary ui-button-fluid"
+                           icon="fa ui-icon-plus"
+                           label="{{'auth.login.actions.register' | translate}}">
+                        </a>
+
+                        <a pButton
+                           [routerLink]="['/recuperar-acesso']"
+                           class="secondary ui-button-fluid"
+                           icon="fa ui-icon-help"
+                           label="{{'auth.login.actions.recover_password' | translate}}">
+                        </a>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>

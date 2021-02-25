@@ -25,6 +25,7 @@
                             "jquery",
                             "lodash",
                             "chart.js",
+                            "moment/locale/pt",
                             "rxjs/internal/Subject",
                             "rxjs/internal/Observable",
                             "rxjs/internal/observable/throwError"
@@ -43,11 +44,12 @@
                             "src/assets/googled41787c6aae2151b.html"
                         ],
                         "styles": [
-                            "src/styles.scss",
+                            "node_modules/primeng/resources/primeng.min.css",
+                            "node_modules/primeicons/primeicons.css",
+                            "src/assets/css/fontawesome/css/fontawesome-all.min.css",
                             "node_modules/quill/dist/quill.core.css",
                             "node_modules/quill/dist/quill.snow.css",
-                            "node_modules/primeng/resources/primeng.min.css",
-                            "src/assets/css/fontawesome/css/fontawesome-all.min.css"
+                            "src/styles.scss"
                         ],
                         "scripts": [
                             "src/assets/js/gtm.js",
@@ -174,6 +176,86 @@
                     "configurations": {
                         "production": {
                             "devServerTarget": "nutricao:serve:production"
+                        }
+                    }
+                },
+                "ultimang": {
+                    "root": "projects/ultimang",
+                    "sourceRoot": "projects/ultimang/src",
+                    "projectType": "library",
+                    "prefix": "ung",
+                    "architect": {
+                        "build": {
+                            "builder": "@angular-devkit/build-ng-packagr:build",
+                            "options": {
+                                "tsConfig": "projects/ultimang/tsconfig.lib.json",
+                                "project": "projects/ultimang/ng-package.json"
+                            },
+                            "configurations": {
+                                "production": {
+                                    "project": "projects/ultimang/ng-package.prod.json"
+                                }
+                            }
+                        },
+                        "test": {
+                            "builder": "@angular-devkit/build-angular:karma",
+                            "options": {
+                                "main": "projects/ultimang/src/test.ts",
+                                "tsConfig": "projects/ultimang/tsconfig.spec.json",
+                                "karmaConfig": "projects/ultimang/karma.conf.js"
+                            }
+                        },
+                        "lint": {
+                            "builder": "@angular-devkit/build-angular:tslint",
+                            "options": {
+                                "tsConfig": [
+                                    "projects/ultimang/tsconfig.lib.json",
+                                    "projects/ultimang/tsconfig.spec.json"
+                                ],
+                                "exclude": [
+                                    "**/node_modules/**"
+                                ]
+                            }
+                        }
+                    }
+                },
+                "toolbox": {
+                    "root": "projects/toolbox",
+                    "sourceRoot": "projects/toolbox/src",
+                    "projectType": "library",
+                    "prefix": "tbx",
+                    "architect": {
+                        "build": {
+                            "builder": "@angular-devkit/build-ng-packagr:build",
+                            "options": {
+                                "tsConfig": "projects/toolbox/tsconfig.lib.json",
+                                "project": "projects/toolbox/ng-package.json"
+                            },
+                            "configurations": {
+                                "production": {
+                                    "project": "projects/toolbox/ng-package.prod.json"
+                                }
+                            }
+                        },
+                        "test": {
+                            "builder": "@angular-devkit/build-angular:karma",
+                            "options": {
+                                "main": "projects/toolbox/src/test.ts",
+                                "tsConfig": "projects/toolbox/tsconfig.spec.json",
+                                "karmaConfig": "projects/toolbox/karma.conf.js"
+                            }
+                        },
+                        "lint": {
+                            "builder": "@angular-devkit/build-angular:tslint",
+                            "options": {
+                                "tsConfig": [
+                                    "projects/toolbox/tsconfig.lib.json",
+                                    "projects/toolbox/tsconfig.spec.json"
+                                ],
+                                "exclude": [
+                                    "**/node_modules/**"
+                                ]
+                            }
                         }
                     }
                 }

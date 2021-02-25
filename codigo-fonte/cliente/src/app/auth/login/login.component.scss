@@ -1,5 +1,9 @@
 @import "../../../assets/sass/variables";
 
+a {
+    margin-top: 10px;
+}
+
 .background-image {
     background: url(../../../assets/layout/images/banner_home.jpg) no-repeat center;
     -webkit-background-size: cover;

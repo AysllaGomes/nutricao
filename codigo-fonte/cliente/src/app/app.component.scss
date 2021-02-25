@@ -1,0 +1,10 @@
+input:disabled, textarea:disabled {
+    border-bottom: 1px dotted;
+    opacity: 1;
+    color: black;
+    cursor: not-allowed !important;
+}
+
+.ui-float-label > label {
+    top: -.75em;
+}
