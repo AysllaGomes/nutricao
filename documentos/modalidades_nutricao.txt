@@ -1,0 +1,19 @@
+|-----------------------------------------|
+| Módulo I - Portal Público               |
+| - Dashboard                             |
+| - Noticias                              |
+| - Parametrizar                          |
+|     -> Parametrizar Menu                |
+|     -> Parametrizar Rodapés             |
+|     -> Parametrizar Páginas             |
+|     -> Parametrizar Banner Fixo         |
+|-----------------------------------------|
+| Módulo I - Portal Público		  |
+| - Dashboard				  |
+| - Noticias				  |
+| - Parametrizar			  |
+|     -> Parametrizar Menu		  |
+|     -> Parametrizar Rodapés		  |
+|     -> Parametrizar Páginas		  |
+|     -> Parametrizar Banner Fixo	  |
+|-----------------------------------------|

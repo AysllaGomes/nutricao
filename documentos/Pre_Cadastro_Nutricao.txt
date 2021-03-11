@@ -1,0 +1,13 @@
+	
+
+		Campos			      Obrigatoriedade		 Tamanho
+	_________________________________________________________________________________
+        |				|			|			|
+	|	Nome Completo		|	    true	|	   255	  	|
+	|	Data de Nascimento	|	    true	|	    10	  	|
+	|	CPF			|	    true	|	    14	  	|
+	|	E-mail			|	    true	|	   255	  	|
+	|	Confirmação de e-mail	|	    true	|	   255	  	|
+	|	Telefone		|	    true	|	    14	  	|
+        |_______________________________|_______________________|_______________________|
+
